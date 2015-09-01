@@ -10,7 +10,7 @@
   "author": "Calvin Jeng <locky4567@gmail.com> (https://github.com/lockys)",
   "license": "MIT",
   "dependencies": {
-    "romanize-names": "^1.0.1"
+    "romanize-names": "^1.0.2"
   },
   "devDependencies": {
     "del": "^2.0.0",
