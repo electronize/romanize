@@ -15,7 +15,7 @@ $(document).ready(function() {
     },
   });
 
-  $('#input').bind('input propertychange', function() {
+  $('#input').on('input propertychange', function() {
     $('#output').html(romanize(this.value, system));
   });
 });

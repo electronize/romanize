@@ -4,11 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "browserfy": "browserify ./src/assets/js/index.js -o ./dist/assets/js/bundle.js"
   },
   "author": "Calvin Jeng <locky4567@gmail.com> (https://github.com/lockys)",
   "license": "MIT",
   "dependencies": {
     "romanize-names": "^1.0.1"
+  },
+  "devDependencies": {
+    "del": "^2.0.0",
+    "gulp": "^3.9.0",
+    "gulp-browserify": "^0.5.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.4.0",
+    "gulp-watch": "^4.3.5"
   }
 }
