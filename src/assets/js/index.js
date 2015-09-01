@@ -14,16 +14,14 @@ $(document).ready(function() {
     var word = this.value;
     var systemToclass = {'WG': '.wg-output', 'MPS-II': '.mps-output', 'HANYU': '.hanyu-output'};
 
-    if (word === '' || word.length === 1) {
+    if (!word || word.length === 1) {
       for (var system in systemToclass) {
         $(systemToclass[system]).html('無結果');
       }
     }
 
-    for (var system in systemToclass) {
-      $(systemToclass[system]).html(romanize(this.value, system));
+    for (var sys in systemToclass) {
+      $(systemToclass[sys]).html(romanize(this.value, sys));
     }
-
-    // $outputEle.removeClass('content-hidden');
   });
 });
