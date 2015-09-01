@@ -17,6 +17,17 @@
         .column {
           max-width: 450px;
         }
+        /**
+          Utilities
+        */
+        .content-hidden {
+          display: none;
+        }
+
+        footer {
+          text-align: center;
+          color: gray;
+        }
       </style>
   </head>
   <body>
@@ -26,35 +37,44 @@
       <div class="column">
         <h2 class="ui teal image header">
           <div class="content">
-            姓名拼音轉換
+            姓名拼音轉換小幫手
           </div>
         </h2>
         <form class="ui large form">
           <div class="ui stacked segment">
 
-            <div class="ui right action left icon input">
+            <div class="ui right left icon input">
               <i class="paragraph icon"></i>
-              <input type="text" placeholder="輸入姓名" id="input">
-              <div class="ui dropdown button">
-                <div class="text">拼音系統</div>
-                <i class="dropdown icon"></i>
-                <div class="menu">
-                  <div class="item">WG (default)</div>
-                  <div class="item">MPS-II</div>
-                  <div class="item">HANYU</div>
-                </div>
-              </div>
+              <input type="text" placeholder="輸入姓名" id="input" value="蔡盈文">
             </div>
+
           </div>
 
           <div class="ui error message"></div>
-          <div id="output"></div>
 
+          <div class="ui divided selection list info message" id="output">
+            <a class="item">
+              <div class="ui red horizontal label">WG 拼音</div>
+              <span class="wg-output">Ying-Wen Tsai</span>
+            </a>
+            <a class="item">
+              <div class="ui purple horizontal label">MPS-II 拼音</div>
+              <span class="mps-output">Ying-Wen Tsai</span>
+            </a>
+            <a class="item">
+              <div class="ui red horizontal label">HANYU 拼音</div>
+              <span class="hanyu-output">Ying-Wun Cai</span>
+            </a>
+            <span class="item">
+              以上為轉換結果
+            </span>
+          </div>
         </form>
-
-
       </div>
     </div>
+    <footer>
+    # 利用 <a href="https://github.com/muan/romanize-names" target="_blank"> muan/romanize-names </a>
+    </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <!-- Semantic Dependencies -->

@@ -9,23 +9,21 @@ $(document).ready(function() {
   var $inputEle = $('#input');
   var $outputEle = $('#output');
 
-  $('.dropdown').dropdown({
-    onChange: function(val) {
-      console.log((valToSystem[val]));
-      system = valToSystem[val];
-      $outputEle.html(romanize($inputEle.val(), system));
-    },
-  });
-
   $inputEle.bind('input propertychange', function(e) {
     e.preventDefault();
     var word = this.value;
-    console.log(word);
+    var systemToclass = {'WG': '.wg-output', 'MPS-II': '.mps-output', 'HANYU': '.hanyu-output'};
 
     if (word === '' || word.length === 1) {
-      $outputEle.html('');
+      for (var system in systemToclass) {
+        $(systemToclass[system]).html('無結果');
+      }
     }
 
-    $outputEle.html(romanize(this.value, system));
+    for (var system in systemToclass) {
+      $(systemToclass[system]).html(romanize(this.value, system));
+    }
+
+    // $outputEle.removeClass('content-hidden');
   });
 });
