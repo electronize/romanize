@@ -25,7 +25,7 @@ $(document).ready(function() {
 
       var $item = $('<div/>', {
         class: 'item',
-        html: '<span class="name-tag">' + w + ' => </span>',
+        html: '<span class="name-tag">' + w + ' <i class="arrow circle outline right icon olive" style="display: inline !important;"></i> </span>',
       });
 
       for (var s in systemToclass) {
