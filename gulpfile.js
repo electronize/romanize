@@ -6,10 +6,17 @@ var notify = require('gulp-notify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var browserify = require('gulp-browserify');
+/**
+CSS related
+*/
 var less = require('gulp-less');
 var minifyCSS = require('gulp-minify-css');
 var concatCss = require('gulp-concat-css');
 
+/**
+Images processing
+*/
+var imagemin = require('gulp-imagemin');
 /**
   Call this task indepedently Using 'gulp js'
 **/
@@ -36,6 +43,13 @@ gulp.task('less', function() {
       .pipe(gulp.dest('./dist/assets/css'));
 });
 
+gulp.task('image', function() {
+  return gulp.src('./src/assets/img/*')
+    .pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
+    .pipe(gulp.dest('./dist/assets/img'))
+    .pipe(notify({ message: 'images compression finished!' }));
+});
+
 gulp.task('clean', function(cb) {
   del(['./dist/assets'], cb);
 });
@@ -43,4 +57,4 @@ gulp.task('clean', function(cb) {
 /**
   default task by 'gulp' and do js task
 **/
-gulp.task('default', ['js', 'less']);
+gulp.task('default', ['js', 'less', 'image']);
