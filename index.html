@@ -2,37 +2,12 @@
 <html>
   <head>
       <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>姓名拼音查詢</title>
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.css">
-      <style type="text/css">
-        body {
-          background-color: #DADADA;
-        }
-        body > .grid {
-          height: 100%;
-        }
-        .image {
-          margin-top: -100px;
-        }
-        .column {
-          max-width: 450px;
-        }
-        /**
-          Utilities
-        */
-        .content-hidden {
-          display: none;
-        }
-
-        footer {
-          text-align: center;
-          color: gray;
-        }
-      </style>
+      <link rel="stylesheet" type="text/css" href="./dist/assets/css/bundle.css">
   </head>
   <body>
-
-
     <div class="ui middle aligned center aligned grid">
       <div class="column">
         <h2 class="ui teal image header">
@@ -41,39 +16,31 @@
           </div>
         </h2>
         <form class="ui large form">
+
           <div class="ui stacked segment">
 
             <div class="ui right left icon input">
-              <i class="paragraph icon"></i>
-              <input type="text" placeholder="輸入姓名" id="input" value="蔡盈文">
+              <textarea rows="8" cols="40" type="text" placeholder="輸入姓名(多行輸入翻譯多個姓名)" id="input"></textarea>
             </div>
-
+            <div class="ui divided selection list" id="output">
+              <div class="item">
+                蔡盈文 =>
+                <a class="ui red horizontal label" href="https://zh.wikipedia.org/zh-tw/%E5%A8%81%E5%A6%A5%E7%91%AA%E6%8B%BC%E9%9F%B3" target="_blank">威妥瑪拼音(WG)</a>
+                <span class="wg-output">Ying-Wen Tsai</span>
+                <a class="ui purple horizontal label" href="https://zh.wikipedia.org/wiki/%E5%9C%8B%E8%AA%9E%E6%B3%A8%E9%9F%B3%E7%AC%A6%E8%99%9F%E7%AC%AC%E4%BA%8C%E5%BC%8F" target="_blank">國音第二式拼音(MPS-II)</a>
+                <span class="mps-output">Ying-Wen Tsai</span>
+                <a class="ui black horizontal label" href="https://zh.wikipedia.org/wiki/%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3" target="_blank">漢語拼音(Hanyu)</a>
+                <span class="hanyu-output">Ying-Wun Cai</span>
+              </div>
+            </div>
           </div>
 
           <div class="ui error message"></div>
-
-          <div class="ui divided selection list info message" id="output">
-            <div class="item">
-              <a class="ui red horizontal label" href="https://zh.wikipedia.org/zh-tw/%E5%A8%81%E5%A6%A5%E7%91%AA%E6%8B%BC%E9%9F%B3" target="_blank">威妥瑪拼音</a>
-              <span class="wg-output">Ying-Wen Tsai</span>
-            </div>
-            <div class="item">
-              <a class="ui purple horizontal label" href="https://zh.wikipedia.org/wiki/%E5%9C%8B%E8%AA%9E%E6%B3%A8%E9%9F%B3%E7%AC%A6%E8%99%9F%E7%AC%AC%E4%BA%8C%E5%BC%8F" target="_blank">國音第二式拼音</a>
-              <span class="mps-output">Ying-Wen Tsai</span>
-            </div>
-            <div class="item">
-              <a class="ui red horizontal label" href="https://zh.wikipedia.org/wiki/%E6%B1%89%E8%AF%AD%E6%8B%BC%E9%9F%B3" target="_blank">漢語拼音</a>
-              <span class="hanyu-output">Ying-Wun Cai</span>
-            </div>
-            <span class="item">
-              以上為轉換結果
-            </span>
-          </div>
         </form>
       </div>
     </div>
     <footer>
-    # 利用 <a href="https://github.com/muan/romanize-names" target="_blank"> muan/romanize-names </a>
+    # Credited to <a href="https://github.com/muan/romanize-names" target="_blank"> muan/romanize-names </a>, # <a href="https://github.com/electronize/romanize" target="_blank">Github Repo</a>
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 

@@ -6,6 +6,9 @@ var notify = require('gulp-notify');
 var rename = require('gulp-rename');
 var concat = require('gulp-concat');
 var browserify = require('gulp-browserify');
+var less = require('gulp-less');
+var minifyCSS = require('gulp-minify-css');
+var concatCss = require('gulp-concat-css');
 
 /**
   Call this task indepedently Using 'gulp js'
@@ -24,6 +27,15 @@ gulp.task('js', function() {
     .pipe(notify({ message: 'scripts task finished!' }));
 });
 
+gulp.task('less', function() {
+  gulp.watch('./src/assets/less/*.less', ['less']);
+  return gulp.src('./src/assets/less/*.less')
+      .pipe(less())
+      .pipe(concatCss('bundle.css')) // name of concated css.
+      .pipe(minifyCSS())
+      .pipe(gulp.dest('./dist/assets/css'));
+});
+
 gulp.task('clean', function(cb) {
   del(['./dist/assets'], cb);
 });
@@ -31,4 +43,4 @@ gulp.task('clean', function(cb) {
 /**
   default task by 'gulp' and do js task
 **/
-gulp.task('default', ['js']);
+gulp.task('default', ['js', 'less']);
