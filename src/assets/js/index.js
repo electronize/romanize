@@ -5,14 +5,13 @@ $(document).ready(function() {
     'mps-ii': 'MPS-II',
     'hanyu': 'HANYU'
   };
-  var system = 'WG';
   var $inputEle = $('#input');
   var $outputEle = $('#output');
 
   $inputEle.bind('input propertychange', function(e) {
     e.preventDefault();
     $outputEle.html('');
-    var systemToclass = {'WG': '.wg-output', 'MPS-II': '.mps-output', 'HANYU': '.hanyu-output'};
+    var systemToclass = {'WG': 'wg-output', 'MPS-II': 'mps-output', 'HANYU': 'hanyu-output'};
     var wordArr = this.value.replace(/[.,-\/#!$%\^&\*;:{}=\-_`~()]/g, '').split(/\n+/);
 
     for (var i = 0, len = wordArr.length; i < len; ++i) {
@@ -30,7 +29,7 @@ $(document).ready(function() {
 
       for (var s in systemToclass) {
         $span = $('<span/>', {
-          class: systemToclass[s].replace('.', '') + ' pinyinTag',
+          class: systemToclass[s] + ' pinyinTag',
           text: romanize(w, s),
         });
         var linksMap = reInitLink();
