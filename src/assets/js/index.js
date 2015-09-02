@@ -50,7 +50,7 @@ $(document).ready(function() {
     try {
       var successful = document.execCommand('copy');
       var msg = successful ? 'successful' : 'unsuccessful';
-      swal({title: 'Ok!', text: '已經幫你複製 ' + $that.html(), timer: 900, showConfirmButton: true });
+      swal({title: 'Ok!', text: '已經幫你複製 ' + $that.html(), timer: 1200, showConfirmButton: true });
     } catch (err) {
       swal('抱歉!', '您的瀏覽器不支援複製');
     }
