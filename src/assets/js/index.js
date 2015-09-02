@@ -24,7 +24,7 @@ $(document).ready(function() {
 
       var $item = $('<div/>', {
         class: 'item',
-        html: '<span class="name-tag">' + w + ' <i class="arrow circle outline right icon olive" style="display: inline !important;"></i> </span>',
+        html: '<span class="name-tag">' + w + '</span><i class="arrow circle outline right icon olive" style="display: inline !important;"></i>',
       });
 
       for (var s in systemToclass) {
@@ -38,9 +38,23 @@ $(document).ready(function() {
       }
 
       $item.appendTo($outputEle);
+      $('.pinyinTag').click(dealCopy);
     }
 
   });
+
+  function dealCopy(e) {
+    var $that = $(this);
+    console.log($that.html());
+    $('.copy-text').val($that.html()).select();
+    try {
+      var successful = document.execCommand('copy');
+      var msg = successful ? 'successful' : 'unsuccessful';
+      swal({title: 'Ok!', text: '已經幫你複製 ' + $that.html(), timer: 900, showConfirmButton: true });
+    } catch (err) {
+      swal('抱歉!', '您的瀏覽器不支援複製');
+    }
+  }
 
   function reInitLink() {
     var $wgHyperLink = $('<a/>', {

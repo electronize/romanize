@@ -6,6 +6,7 @@
       <title>姓名拼音查詢</title>
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.css">
       <link rel="stylesheet" type="text/css" href="./dist/assets/css/bundle.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css" media="screen" title="no title" charset="utf-8">
   </head>
   <body>
     <div class="ui middle aligned center aligned grid">
@@ -44,14 +45,16 @@
         </form>
       </div>
     </div>
+    <textarea class="copy-text" style="position: absolute; opacity:0;"></textarea>
     <footer>
+    <i class="help icon"></i>小技巧: 點拼音名字即可馬上複製!<br/>
     # Credited to <a href="https://github.com/muan/romanize-names" target="_blank"> muan/romanize-names </a>, # <a href="https://github.com/electronize/romanize" target="_blank">Github Repo</a>
     </footer>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 
     <!-- Semantic Dependencies -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.0.8/semantic.min.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.js" charset="utf-8"></script>
     <script type="text/javascript" src="./dist/assets/js/build.min.js"></script>
 
   </body>
