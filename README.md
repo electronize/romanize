@@ -12,4 +12,4 @@ Contribute
 License
 ==
 Thanks to [muan](https://github.com/muan)'s awesome [muan/romanize-names](https://github.com/muan/romanize-names) module.  
-MIT @ electronize 
+MIT
