@@ -9,6 +9,14 @@ Contribute
 ==
 歡迎 PRs, open issues
 
+Contributor(s)
+==
+[lockys](https://github.com/lockys)
+
+Collaborator(s)
+==
+[John-Lin](https://github.com/John-Lin)
+
 License
 ==
 Thanks to [muan](https://github.com/muan)'s awesome [muan/romanize-names](https://github.com/muan/romanize-names) module.  
